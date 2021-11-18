@@ -1,0 +1,17 @@
+{
+  "name": "api-many-to-many",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:matheusmelchiades/api-many-to-many.git",
+  "author": "Matheus Maciel <matheusmacielmelchiades@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
