@@ -28,7 +28,7 @@ Diagrama da aplicação
 
 # Rotas
 
-| metodo | rota                                   | descrição                                                        |
+| [metodos](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods) | rota                                   | descrição                                                        |
 | ------ | -------------------------------------- | ---------------------------------------------------------------- |
 | GET    | /users                                 | retorna todos os usuarios                                        |
 | GET    | /users/<user_id>                       | retorna dados do usuario requisitado pelo id                     |
