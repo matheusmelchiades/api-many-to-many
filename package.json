@@ -9,6 +9,7 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "alasql": "^1.7.3",
     "express": "^4.17.1"
   },
   "devDependencies": {
