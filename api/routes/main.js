@@ -5,7 +5,4 @@ const controller = require('../controllers/main')
 
 router.get('/', controller.get)
 
-module.exports = {
-    basePath: '/',
-    routes: router
-}
+module.exports = router

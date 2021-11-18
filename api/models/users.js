@@ -1,6 +1,6 @@
 const db = require('../../database')
 
-const tableName = 'products'
+const tableName = 'users'
 
 module.exports.findAll = () => {
 
