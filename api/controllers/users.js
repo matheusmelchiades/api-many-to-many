@@ -17,3 +17,10 @@ module.exports.getById = async (req, res) => {
     return res.send(user)
 }
 
+module.exports.getProductsByUser = async (req, res) => {
+    const { id } = req.params
+
+    const productsByUser = await model.findProductsByUserId(id)
+
+    return res.send(productsByUser)
+}

@@ -16,3 +16,13 @@ module.exports.findById = (id) => {
         WHERE id = ${id}
     `)
 }
+
+module.exports.findProductsByUserId = (id) => {
+
+    return db.exec(`
+        SELECT * FROM ${tableName} u
+        INNER JOIN user_products up on up.user_id = u.id
+        INNER JOIN products p on p.id = up.product_id
+        WHERE u.id = ${id}
+    `)
+}
