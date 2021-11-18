@@ -3,7 +3,7 @@ const model = require('../models/users')
 module.exports.get = async (req, res) => {
 
     const users = await model.findAll()
-    console.log(users)
+
     return res.send(users)
 }
 
@@ -11,8 +11,6 @@ module.exports.getById = async (req, res) => {
     const { id } = req.params
 
     const result = await model.findById(id)
-
-    console.log(result)
 
     if (!result) return res.status(400).send('Not found')
 
@@ -33,4 +31,12 @@ module.exports.create = async (req, res) => {
     const user = await model.insertOne(name);
 
     return res.send(user);
+}
+
+module.exports.associateProductToUser = async (req, res) => {
+    const { id, productId } = req.params
+
+    await model.createAssociation(id, productId);
+
+    return res.send(`associated product (${productId}) to user ${id}`)
 }

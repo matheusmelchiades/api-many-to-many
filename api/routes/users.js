@@ -8,5 +8,6 @@ router.get('/:id', controller.getById)
 router.get('/:id/products', controller.getProductsByUser)
 
 router.post('/', controller.create)
+router.post('/:id/products/:productId', controller.associateProductToUser)
 
 module.exports = router

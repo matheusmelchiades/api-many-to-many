@@ -1,6 +1,7 @@
 const db = require('../../database')
 
-const tableName = `users`
+const tableName = 'users'
+const tableNameJoinProducts = 'user_products'
 
 module.exports.findAll = () => {
 
@@ -39,3 +40,19 @@ module.exports.insertOne = async (name) => {
 
     return user;
 }
+
+
+module.exports.createAssociation = async (userId, productId) => {
+    const nextId = await db.getNextIndex(tableNameJoinProducts)
+
+    const data = {
+        id: nextId,
+        user_id: userId,
+        product_id: productId
+    }
+
+    await db.exec(`INSERT INTO ${tableNameJoinProducts} (id, user_id, product_id) VALUES (${data.id}, ${data.user_id}, ${data.product_id})`)
+
+    return data;
+}
+
