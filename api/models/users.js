@@ -8,3 +8,11 @@ module.exports.findAll = () => {
         SELECT * FROM ${tableName}
     `)
 }
+
+module.exports.findById = (id) => {
+
+    return db.exec(`
+        SELECT * FROM ${tableName} 
+        WHERE id = ${id}
+    `)
+}
