@@ -3,18 +3,20 @@ const model = require('../models/users')
 module.exports.get = async (req, res) => {
 
     const users = await model.findAll()
-
+    console.log(users)
     return res.send(users)
 }
 
 module.exports.getById = async (req, res) => {
     const { id } = req.params
 
-    const [user] = await model.findById(id)
+    const result = await model.findById(id)
 
-    if (!user) return res.status(400).send('Not found')
+    console.log(result)
 
-    return res.send(user)
+    if (!result) return res.status(400).send('Not found')
+
+    return res.send(result)
 }
 
 module.exports.getProductsByUser = async (req, res) => {
@@ -23,4 +25,12 @@ module.exports.getProductsByUser = async (req, res) => {
     const productsByUser = await model.findProductsByUserId(id)
 
     return res.send(productsByUser)
+}
+
+module.exports.create = async (req, res) => {
+    const { name } = req.body;
+
+    const user = await model.insertOne(name);
+
+    return res.send(user);
 }

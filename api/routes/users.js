@@ -7,4 +7,6 @@ router.get('/', controller.get)
 router.get('/:id', controller.getById)
 router.get('/:id/products', controller.getProductsByUser)
 
+router.post('/', controller.create)
+
 module.exports = router

@@ -6,6 +6,8 @@ async function start() {
     try {
         const app = express()
 
+        app.use(express.json());
+
         await api.setup(app)
 
         await app.listen(config.port, config.hostname)
