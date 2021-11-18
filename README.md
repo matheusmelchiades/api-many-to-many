@@ -2,12 +2,29 @@
 
 Este é um simples exemplo de uma API no contexto de relação N:N, entre duas entidades.
 
-# DIAGRAMA
+# Como configurar
+
+execute o comando abaixo para instalar as dependencias necessarias
+
+```bash
+$ yarn
+or
+$ npm i
+```
+
+# Como iniciar
+
+```bash
+$ yarn start
+or
+$ npm start
+```
+
+# Modelagem
 
 Diagrama da aplicação
 
 ![image](https://user-images.githubusercontent.com/29670119/142268459-dc990ca7-6630-481f-b1b6-2e1bc487e6e9.png)
-
 
 # Rotas
 
